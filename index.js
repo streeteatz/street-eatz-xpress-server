@@ -24,7 +24,13 @@ io.on("connection", (socket) => {
   socket.on("send_data", (data) => {
     socket.broadcast.emit("receive_data", data)
   })
+
+  socket.on("send_address", (data => {
+    socket.broadcast.emit("receive_address", data)
+  }))
 })
+
+
 
 server.listen(3001, () => {
   console.log('server is running')
