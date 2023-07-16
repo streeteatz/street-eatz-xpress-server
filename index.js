@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express()
-const http = require("http")
+const https = require("https")
 const { Server } = require('socket.io')
 const cors = require('cors')
 
 app.use(cors({
     origin: "https://streateatz-fe.vercel.app/"
 }))
-const server = http.createServer(app)
+const server = https.createServer(app)
 
 const io = new Server(server, {
   cors: {
