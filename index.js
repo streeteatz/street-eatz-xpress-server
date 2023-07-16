@@ -5,8 +5,12 @@ const { Server } = require('socket.io')
 const cors = require('cors')
 
 app.use(cors({
-    origin: "https://streateatz-fe.vercel.app/"
-}))
+    origin: "https://streateatz-fe.vercel.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["street-eat"],
+    credentials: true
+}));
+
 const server = https.createServer(app)
 
 const io = new Server(server, {
