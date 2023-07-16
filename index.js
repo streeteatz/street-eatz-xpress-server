@@ -4,18 +4,13 @@ const http = require("http")
 const { Server } = require('socket.io')
 const cors = require('cors')
 
-app.use(cors({
-    origin: "https://streateatz-fe.vercel.app",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["street-eat"],
-    credentials: true
-}));
+app.use(cors());
 
 const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: "https://streateatz-fe.vercel.app/",
+    origin: "http://localhost:3000",
     allowedHeaders: ["street-eat"],
     credentials: true,
     methods: ["GET", "POST"]
