@@ -10,7 +10,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: "https://streeteatz-5c4t.onrender.com",
+    origin: "https://streeteatz-jizp.onrender.com/",
     allowedHeaders: ["street-eat"],
     credentials: true,
     methods: ["GET", "POST"]
