@@ -10,7 +10,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: "https://streeteatz-jizp.onrender.com/",
+    origin: "https://streeteatz-jizp.onrender.com",
     allowedHeaders: ["street-eat"],
     credentials: true,
     methods: ["GET", "POST"]
@@ -28,7 +28,6 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("receive_address", data)
   }))
 })
-
 
 
 server.listen(3001, () => {
